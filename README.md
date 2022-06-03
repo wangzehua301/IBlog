@@ -1,7 +1,8 @@
-<<<<<<< HEAD
+
 # IBlog
 A customized blog system
-=======
+#页面schema
+·
 {
     name:'Page',
     attributes: {
@@ -55,5 +56,5 @@ A customized blog system
             ]
         }
     ]
-}
->>>>>>> 42603ef9b6656c662817e3ba54a9dbfd7d2ca0da
+}·
+
