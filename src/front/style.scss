@@ -1,0 +1,10 @@
+@import '~antd/dist/antd.css';
+body {
+  background: #E6E6E6;
+}
+//组件通用样式，全局提取
+.wrapper {
+  width: 1280px;
+  background: #FFF;
+  margin: 0 auto 15px auto;
+}
