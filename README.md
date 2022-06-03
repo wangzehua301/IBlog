@@ -10,25 +10,33 @@
 采用前沿的serverless技术部署，有效减少用户的服务支出；
 
 ### Features - 特性
-响应式，配置化，去服务
+1. 响应式
+2. 配置化
+3. 去服务
 
 ## Requirements - 必要条件
+
 node > 12.0.0
+
 npm > 6.0.0
 
 ## Installation - 安装
 
 npm install 
+
 yarn
 
 ## Usage - 用法
 
 npm run start
+
 //打包
+
 npm run build
 
 ## 页面schema结构    
-`{
+```javascript
+{
     name:'Page',
     attributes: {
         title: 'wzh的个人小站'
@@ -81,7 +89,8 @@ npm run build
             ]
         }
     ]
-}`
+}
+```
 
 ## License - 版权信息
 MIT
