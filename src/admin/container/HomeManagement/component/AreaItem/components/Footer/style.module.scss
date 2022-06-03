@@ -1,0 +1,48 @@
+.row {
+    display: flex;
+    margin-top: 14px;
+    .label {
+      line-height: 32px;
+      width: 70px;
+    }
+    .content {
+      flex: 1;
+    }
+}
+
+.button {
+  margin: 10px 0;
+}
+.area {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px 10px 0 10px;
+  border: 1px dashed #ccc;
+  .delete {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #F00;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #FFF;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  //scss样式名有冲突，最好将名字全部改掉或者将最外层相同的类名改掉。
+  .area-row {
+    margin-bottom: 10px;
+    display: flex;
+    .label {
+      line-height: 32px;
+      width: 40px;
+    }
+    .content {
+      flex: 1;
+    }
+}
+}

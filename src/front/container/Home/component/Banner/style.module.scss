@@ -1,0 +1,51 @@
+.banner {
+  position: relative;
+  // background-image: url('https://serverless-project-static-files.oss-cn-beijing.aliyuncs.com/images/bg.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-bottom: 150px;
+  .person {
+    display: flex;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    .avatar {
+      position: relative;
+      top: -70px;
+      margin-left: 40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+    }
+    .content {
+      flex: 1;
+      .title {
+        overflow: hidden;
+        line-height: 50px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 30px;
+        font-size: 28px;
+        color: #000;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .description {
+        overflow: hidden;
+        display: -webkit-box;
+        height: 64px;
+        line-height: 32px;
+        margin-right: 30px;
+        margin-left: 30px;
+        font-size: 18px;
+        color: #333;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+    
+  }
+}

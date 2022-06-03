@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+    margin-top: 14px;
+    .label {
+      line-height: 32px;
+      width: 70px;
+    }
+    .content {
+      flex: 1;
+    }
+}
