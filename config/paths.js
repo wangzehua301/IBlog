@@ -51,7 +51,6 @@ const resolveModule = (resolveFn, filePath) => {
 };
 
 // config after eject: we're in ./config/
-//为单页面增加一个admin页面，形成多应用
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
@@ -66,7 +65,6 @@ module.exports = {
   appJsConfig: resolveApp('jsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
-  proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   appWebpackCache: resolveApp('node_modules/.cache'),
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),

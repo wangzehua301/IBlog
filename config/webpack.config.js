@@ -223,9 +223,6 @@ module.exports = function (webpackEnv) {
           // changing JS code would still trigger a refresh.
         ]
       : paths.appIndexJs,
-      admin: isEnvDevelopment && !shouldUseReactRefresh
-        ? [ webpackDevClientEntry, paths.adminIndexJs] 
-        : paths.adminIndexJs,
     },
     output: {
       // The build folder.

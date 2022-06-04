@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { useState ,useEffect } from 'react';
 import { parseJsonByString } from '../../../common/utils';
 import Banner  from './component/Banner';
 import Footer  from './component/Footer';
-import { Helmet } from 'react-helmet'
 import List  from './component/List';
+import schema from '../../../common/schema';
 
 
-//像极了lowcode里面的componentMap映射表
+
+//componentMap映射表
 const map = { Banner , Footer , List}
 
 //渲染器,按照组件名返回组件即可
@@ -17,31 +17,43 @@ const render = (index,item) => {
   return Component ? <Component key={index} schema={item}/> : null
 }
 
+
 const Home = () => {
   //获取schema,进行渲染
   const [ pageSchema , setPageSchema ] = useState({})
+  const [isLogin , setlogin] = useState(false)
   const { children = [] , attributes = {}} = pageSchema
 
   useEffect(() => {
-    axios.get('http://localhost:7001/api/schema/getLatestOne',{
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      }
-    }).then((response) => {
-      const data = response?.data?.data;
-      if(data){
-        setPageSchema(parseJsonByString(data.schema,{}))
-      }
-      console.log('请求的数据',data)
-    })
+      setPageSchema(schema)
   },[])
+
+  const handleLogin = () => {
+    setlogin(true)
+    document.body.style.backgroundColor = "white"
+  }
+
+  console.log('执行一次')
+
   return (
-    <div>
-    <Helmet><title>{attributes?.title}</title></Helmet>
-      {children.map((item,index) => {
-        return render(index,item)
-      })}
-    </div>
+      isLogin ? 
+        <div>
+        {children.map((item,index) => {
+          return render(index,item)
+        })}
+      </div>
+      :
+      <>
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:"200px"}}>
+        <img 
+        src="http://serverless-project-static-file123.oss-cn-beijing.aliyuncs.com/images/IBlog.png" alt="logo"
+        style={{width:"200px",borderRadius:"10px",
+        }}
+        />
+      </div><br/>
+      <h2 style={{textAlign:"center"}}>Welcome, IBloger</h2>
+      <a href='javascript:;' style={{textDecoration:"none",textAlign:"center",display:"block"}} onClick={handleLogin} >Click Here To Continue </a>
+      </>
   );
 }
 
