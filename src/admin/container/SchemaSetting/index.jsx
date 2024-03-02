@@ -1,6 +1,6 @@
-import { useCallback , useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import {Button , Input , textArea } from 'antd';
+import {Button , Input  } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './style.module.scss';
 import { parseJsonByString } from '../../../common/utils';
@@ -28,9 +28,8 @@ const useStore = () => {
 
 
 const SchemaSetting = () => {
-  const { changeSchema , schema = {} , changeAttributes } = useStore()
+  const { changeSchema , schema = {}  } = useStore()
   const [text , setText] = useState(JSON.stringify(schema,null,"\t"))
-  const { attributes = {} } = schema;
   // const { title='' } = attributes
   
   const handleSaveBtnClick = () => {

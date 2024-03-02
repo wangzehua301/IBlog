@@ -1,6 +1,6 @@
 import React , { useState , useEffect}from 'react';
 import ReactDOM from 'react-dom';
-import { useDispatch, useSelector , Provider } from 'react-redux';
+import { useDispatch , Provider } from 'react-redux';
 import HomeManagement from './container/HomeManagement';
 import BasicSetting from './container/BasicSetting';
 import SchemaSetting from './container/SchemaSetting';
@@ -59,7 +59,7 @@ const Wrapper = () => {
         changeSchema(parseJsonByString(data.schema,{}))
       }
     })
-  },[])
+  },[changeSchema])
 
   const handleLogout = ()=>{
     getAuthClient().logout()
